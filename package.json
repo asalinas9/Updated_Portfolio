@@ -1,10 +1,10 @@
 {
-	"name": "scss",
+	"name": "updated_portfolio",
 	"version": "1.0.0",
-	"description": "Updated portfolio",
+	"description": "portfolio",
 	"main": "index.js",
 	"scripts": {
-		"sass": "node-sass -w scss/ -o assets/css/ --recursive"
+		"sass": "node-sass -w assets/scss/ -o assets/css/ --recursive"
 	},
 	"author": "Aldo Salinas",
 	"license": "ISC",
