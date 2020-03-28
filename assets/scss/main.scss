@@ -58,6 +58,45 @@ h3 {
 		background: rgba(lighten($primary-color, 2), 0.5);
 	}
 }
+//menu button
+.menu-btn {
+	position: absolute;
+	z-index: 3;
+	right: 35px;
+	top: 35px;
+	cursor: pointer;
+	@include easeOut;
+
+	.btn-line {
+		width: 28px;
+		height: 3px;
+		margin: 0 0 5px 0;
+		background: #fff;
+		@include easeOut;
+	}
+
+	//animates burger menu
+	&.close {
+		transform: rotate(180deg);
+
+		.btn-line {
+			//line 1 - rotate:
+			&:nth-child(1) {
+				transform: rotate(45deg) translate(5px, 5px);
+			}
+
+			//line 2 - rotate:
+			&:nth-child(2) {
+				opacity: 0;
+			}
+
+			//line 3 - rotate:
+			&:nth-child(3) {
+				transform: rotate(-45deg) translate(7px, -6px);
+			}
+		}
+	}
+}
 
 a {
 	color: #fff;
