@@ -1,0 +1,14 @@
+{
+	"name": "scss",
+	"version": "1.0.0",
+	"description": "Updated portfolio",
+	"main": "index.js",
+	"scripts": {
+		"sass": "node-sass -w scss/ -o assets/css/ --recursive"
+	},
+	"author": "Aldo Salinas",
+	"license": "ISC",
+	"dependencies": {
+		"node-sass": "^4.13.1"
+	}
+}
