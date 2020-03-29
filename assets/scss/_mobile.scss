@@ -83,6 +83,11 @@
 			font-size: 5rem;
 		}
 	}
+	.portrait {
+		background: url('../images/profilepic.jpg');
+		width: 100px;
+		height: 100px;
+	}
 
 	.projects {
 		grid-template-columns: 1fr;
