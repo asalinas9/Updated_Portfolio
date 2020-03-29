@@ -1,32 +1,5 @@
-$primary-color: #444;
-$secondary-color: orange;
-$show-home-image: true;
-$home-image: url(../images/dev7.jpeg);
-$background-opacity: 0.9;
-
-@mixin easeOut {
-	transition: all 0.5s ease-out;
-}
-
-@mixin background {
-	@if $show-home-image {
-		&#bg-img {
-			background: $home-image;
-			background-attachment: fixed;
-			background-size: cover;
-
-			.overlay {
-				position: absolute;
-				top: 0;
-				right: 0;
-				width: 100%;
-				height: 100%;
-				z-index: -1;
-				background: rgba($primary-color, $background-opacity);
-			}
-		}
-	}
-}
+@import 'setupconfig';
+@import 'nav';
 
 * {
 	box-sizing: border-box;
@@ -35,13 +8,14 @@ $background-opacity: 0.9;
 body {
 	@include background;
 	background: $primary-color;
-	color: #fff;
+	color: set-text-color($primary-color);
 	height: 100%;
 	margin: 0;
-	font-family: 'segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	line-height: 1.5;
 }
 
+// Headings
 h1,
 h2,
 h3 {
@@ -56,45 +30,6 @@ h3 {
 		margin-bottom: 2rem;
 		padding: 0.2rem 1rem;
 		background: rgba(lighten($primary-color, 2), 0.5);
-	}
-}
-//menu button
-.menu-btn {
-	position: absolute;
-	z-index: 3;
-	right: 35px;
-	top: 35px;
-	cursor: pointer;
-	@include easeOut;
-
-	.btn-line {
-		width: 28px;
-		height: 3px;
-		margin: 0 0 5px 0;
-		background: #fff;
-		@include easeOut;
-	}
-
-	//animates burger menu
-	&.close {
-		transform: rotate(180deg);
-
-		.btn-line {
-			//line 1 - rotate:
-			&:nth-child(1) {
-				transform: rotate(45deg) translate(5px, 5px);
-			}
-
-			//line 2 - rotate:
-			&:nth-child(2) {
-				opacity: 0;
-			}
-
-			//line 3 - rotate:
-			&:nth-child(3) {
-				transform: rotate(-45deg) translate(7px, -6px);
-			}
-		}
 	}
 }
 
@@ -115,17 +50,18 @@ header {
 
 main {
 	padding: 4rem;
-	height: 100%;
+	// height: 100%;
+	min-height: calc(100vh - 60px);
 
 	.icons {
 		margin-top: 1rem;
 
 		a {
 			padding: 0.4rem;
+			@include easeOut;
 
 			&:hover {
 				color: $secondary-color;
-				@include easeOut();
 			}
 		}
 	}
@@ -137,3 +73,97 @@ main {
 		}
 	}
 }
+
+.about-info {
+	display: grid;
+	grid-gap: 30px;
+	grid-template-areas:
+		'bioimage bio bio'
+		'job1 job2 job3';
+	grid-template-columns: repeat(3, 1fr);
+
+	.bio-image {
+		grid-area: bioimage;
+		margin: auto;
+		border-radius: 50%;
+		border: $secondary-color 3px solid;
+	}
+}
+
+// Work/Projects
+.projects {
+	display: grid;
+	grid-gap: 0.7rem;
+	grid-template-columns: repeat(3, 1fr);
+
+	img {
+		width: 100%;
+		border: 3px #fff solid;
+
+		&:hover {
+			opacity: 0.5;
+			border-color: $secondary-color;
+			@include easeOut;
+		}
+	}
+}
+
+// Contact Page
+.boxes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 1rem;
+
+	div {
+		font-size: 2rem;
+		border: 3px #fff solid;
+		padding: 1.5rem 2.5rem;
+		margin-bottom: 3rem;
+		@include easeOut;
+
+		&:hover {
+			padding: 0.5rem 1.5rem;
+			background: $secondary-color;
+			color: set-text-color($secondary-color);
+			span {
+				color: set-text-color($secondary-color);
+			}
+		}
+	}
+}
+
+// Button Styles
+.btn {
+	display: block;
+	padding: 0.5rem 1rem;
+	border: 0;
+	margin-bottom: 0.3rem;
+	&:hover {
+		background: $secondary-color;
+		color: set-text-color($secondary-color);
+	}
+}
+
+.btn-dark {
+	@extend .btn;
+	background: darken($primary-color, 50);
+	color: #fff;
+}
+
+.btn-light {
+	@extend .btn;
+	background: lighten($primary-color, 50);
+	color: #333;
+}
+
+#main-footer {
+	text-align: center;
+	padding: 1rem;
+	background: darken($primary-color, 10);
+	color: set-text-color($primary-color);
+	height: 60px;
+}
+
+@import 'mobile';
