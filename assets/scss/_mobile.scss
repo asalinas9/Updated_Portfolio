@@ -5,14 +5,14 @@
 	}
 }
 
-// Desktops & Laptops
+// Desktops
 @include mediaLg {
 	.projects {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
-// Tablets & Small Laptops
+// Tablets
 @include mediaMd {
 	main {
 		align-items: center;
@@ -70,7 +70,7 @@
 	}
 }
 
-// Smartphones
+// mobile phones
 @include mediaSm {
 	main {
 		padding: 2rem;
