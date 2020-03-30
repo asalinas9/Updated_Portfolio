@@ -1,7 +1,7 @@
 # Updated_Portfolio
 https://asalinas9.github.io/Updated_Portfolio/
 
-For this Updated Portfolio I based the Theme of Travis Media.
+For this Updated Portfolio I based the Theme from Travis Media.
 Made it more custom to my likes: background color, background image, added a few areas based on my personal bio.
 
 Issues
