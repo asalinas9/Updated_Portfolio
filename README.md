@@ -8,7 +8,4 @@ Issues
 The issues I had where pertaining to the profile image. I had to find the right size and customize it 3 different ways (depending on the size/slide transition). Also, adjusting the grid boxes to be centered under the about me page. 
 
 Technology Used
--HTML
--SASS
--Javascript
--Node js
+-HTML, SASS, Javascript, Node js
