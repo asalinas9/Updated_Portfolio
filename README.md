@@ -1,9 +1,6 @@
 # Updated_Portfolio
 https://asalinas9.github.io/Updated_Portfolio/
 
-For this Updated Portfolio I based the template from Travis Media.
-Made it more custom to my likes: background color, background images, added a few areas based on my personal bio.
-
 ## Projects added to this updated Portfolio
 For this updated Portfolio, I added new projects that includes new skills learned during the past month such as: _MySQL_, _Node Server_, _Handlebars_, _Sequelize_, _Express js_
 
