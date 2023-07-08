@@ -9,6 +9,6 @@
 	"author": "Aldo Salinas",
 	"license": "ISC",
 	"dependencies": {
-		"node-sass": "^7.0.3"
+		"node-sass": "^9.0.0"
 	}
 }
